@@ -12,6 +12,7 @@ pipeline {
                 echo "enable version"
                 else
                 echo "disable version"
+             '''   
             }
         }
    }     
