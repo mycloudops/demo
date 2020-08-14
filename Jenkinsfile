@@ -20,10 +20,10 @@ pipeline {
 }  
 def Version(){
     def source_code_hash  = "nRC9RyWtg2Mh9xUCG+vt9F+"
-    def old_source_code_hash = null
-    if (old_source_code_hash == source_code_hash)
+    def old_old_source_code_hash = null
+    if (old_source_code_hash == null || old_source_code_hash == source_code_hash )
     return true
     else
     return false
-    def old_source_code_hash = source_code_hash
+    def old_old_source_code_hash = source_code_hash
 }
