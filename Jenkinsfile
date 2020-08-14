@@ -1,7 +1,7 @@
 pipeline {
   agent any
     environment{
-        $enableVersion = Version()
+        enableVersion = Version()
     }
   stages{
         stage('Build Docker Image'){
