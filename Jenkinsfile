@@ -6,8 +6,8 @@ pipeline {
   stages{
         stage('Build Docker Image'){
             steps{
-                echo $enableVersion
                 sh '''
+                echo $enableVersion
                 if [ $enableVersion == true ]
                 then
                 echo "enable version"
