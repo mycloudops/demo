@@ -23,6 +23,4 @@ def Version(){
     def old_source_code_hash = source_code_hash
     if (old_source_code_hash != source_code_hash)
     return false
-    else
-    return true
 }
