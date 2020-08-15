@@ -7,9 +7,6 @@ pipeline {
        booleanParam(name: 'apply'
          defaultValue: true,
          description: 'apply should be false')
-       booleanParam(name: 'destroy'
-         defaultValue: false,
-         description: 'apply should be false')
   }
   stages{
         stage('Build Docker Image'){
