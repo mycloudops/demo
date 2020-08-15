@@ -8,7 +8,7 @@ pipeline {
          defaultValue: true,
          description: 'apply should be false')
        booleanParam(name: 'destroy'
-         defaultValue: true,
+         defaultValue: false,
          description: 'apply should be false')
   }
   stages{
