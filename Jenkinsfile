@@ -7,8 +7,8 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 sh '''
-                oldSHC=$(cat /home/hashcode | xargs)
-                SHC="afkjsdkj1232nkjsd"
+                oldSHC=afkjsdkj1232nkjsd
+                SHC=afkjsdkj1232nkjsd
                 if ( $SHC == $oldSHC )
                 echo "True"
                 else
