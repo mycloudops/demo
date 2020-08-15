@@ -3,7 +3,7 @@ pipeline {
   environment{
      BRANCH = "${env.BRANCH_NAME}"
   }
-  properties([parameters([booleanParam(defaultValue: true, description: 'This is to select terraform apply or destroy.', name: 'apply')])])
+  options([parameters([booleanParam(defaultValue: true, description: 'This is to select terraform apply or destroy.', name: 'apply')])])
   stages{
         stage('Build Docker Image'){
             steps{
