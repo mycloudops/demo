@@ -22,7 +22,7 @@ pipeline {
                 git config --global user.name "mcloudops"
                 git add hashcode
                 git commit -m "Jenkins commit"
-                git push origin $BRANCH
+                git push central $BRANCH
                 fi  
              '''   
             }
