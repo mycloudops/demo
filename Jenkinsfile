@@ -14,9 +14,6 @@ pipeline {
                 echo "True"
                 else
                 echo "False"
-                sed -i -e "s/$oldSHC/$SHC/g" /home/hashcode
-                cat hashcode
-                echo "SCH replaced"
                 fi  
              '''   
             }
