@@ -9,12 +9,7 @@ pipeline {
   stages{
         stage('Build Docker Image'){
             steps{
-              if ("${params.apply}") {
-                sh label: '', script: 'echo "True"'
-              }
-              else {
-              sh label: '', script: 'echo "False"'
-              }
+              echo "Trying ${params.apply}"
             }
         }
    }  
