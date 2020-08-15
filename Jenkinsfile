@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 sh '''
-                mode=$params.terrafrom_mode
+                mode=$(echo "${params.terrafrom_mode}")
                 oFN=sfdsd
                 nFN=sfdsd
                 oldSHC=afkjsdkj1232nkjsd
