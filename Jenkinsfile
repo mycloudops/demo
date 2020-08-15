@@ -16,10 +16,7 @@ pipeline {
                 echo "False"
                 sed -i -e "s/$oldSHC/$SHC/g" hashcode
                 cat hashcode
-                echo "SCH replaced"
-                git remote add central https://github.com/mycloudops/demo.git
-                git config --global user.email "postbox.mywork@gmail.com"
-                git config --global user.name "mcloudops"
+                echo "SCH replaced
                 git add hashcode
                 git commit -m "Jenkins commit"
                 git push central $BRANCH
