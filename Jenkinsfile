@@ -7,23 +7,18 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 sh '''
-                echo $enableVersion
-                if [ $enableVersion == true ]
+                SHC=afkjsdkj1232nkjsd
+                oldSHC=$(cat hashcode | xargs)
+                if ( $SHC == $oldSHC )
                 then
-                echo "enable version"
+                echo "True"
                 else
-                echo "disable version"
+                echo "False"
+                sed -i 's/$oldSHC/$SHC/gI' hashcode
+                echo "SCH replaced"
+                fi  
              '''   
             }
         }
    }  
-}  
-def Version(){
-    def source_code_hash  = "nRC9RyWtg2Mh9xUCG+vt9F+"
-    def old_old_source_code_hash = null
-    if (old_source_code_hash == null || old_source_code_hash == source_code_hash )
-    return true
-    else
-    return false
-    def old_old_source_code_hash = source_code_hash
 }
