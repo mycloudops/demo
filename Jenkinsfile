@@ -9,7 +9,7 @@ pipeline {
                 sh '''
                 oldSHC=afkjsdkj1232nkjsd
                 SHC=afkjsdkj1232nkjsd
-                if ( $SHC == $oldSHC )
+                if [ $SHC == $oldSHC ]
                 then
                 echo "True"
                 else
