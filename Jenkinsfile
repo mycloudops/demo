@@ -7,16 +7,17 @@ pipeline {
     choice(name: 'terrafrom_mode',
       choices: 'init\ndestroy',
       description: 'It will decide terraform mode choice')
+  }
   stages{
         stage('Build Docker Image'){
             steps{
                 sh '''
-                mode=$(params.terrafrom_mode)
+                
                 oFN=sfdsd
                 nFN=sfdsd
                 oldSHC=afkjsdkj1232nkjsd
                 SHC=afkjsdkj1232nkjbd
-                if [ $mode == init ]
+                if [ $params.terrafrom_mode == init ]
                 then
                 echo "True"
                 else
