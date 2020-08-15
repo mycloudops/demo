@@ -11,7 +11,7 @@ pipeline {
                 nFN=sfdsd
                 oldSHC=afkjsdkj1232nkjsd
                 SHC=afkjsdkj1232nkjbd
-                if [ $SHC == $oldSHC && $oFN == $nFN ]
+                if [ '$SHC == $oldSHC' && '$oFN == $nFN' ]
                 then
                 echo "True"
                 else
