@@ -16,7 +16,7 @@ pipeline {
                 echo "False"
                 sed -i -e "s/$oldSHC/$SHC/g" hashcode
                 cat hashcode
-                echo "SCH replaced
+                echo "SCH replaced"
                 git add hashcode
                 git commit -m "Jenkins commit"
                 git push central $BRANCH
