@@ -3,20 +3,16 @@ pipeline {
   environment{
      BRANCH = "${env.BRANCH_NAME}"
   }
-  properties([
-     parameters([
-       booleanParam(
+  parameters {
+       booleanParam(name: 'apply'
          defaultValue: true,
          description: 'apply should be false',
-         name: 'apply'
-       ),
-       booleanParam(
-         defaultValue: false,
-         description: 'destroy should be true',
-         name: 'destroy'
-       ),
-     ])
-   ])
+       )
+       booleanParam(name: 'destroy'
+         defaultValue: true,
+         description: 'apply should be false',
+       )
+  }
   stages{
         stage('Build Docker Image'){
             steps{
