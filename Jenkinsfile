@@ -8,7 +8,7 @@ pipeline {
             steps{
                 sh '''
                 oldSHC=afkjsdkj1232nkjsd
-                SHC=afkjsdkj1232nkjsd
+                SHC=afkjsdkj1232nkjbd
                 if [ $SHC == $oldSHC ]
                 then
                 echo "True"
