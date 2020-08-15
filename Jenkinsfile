@@ -7,9 +7,22 @@ pipeline {
     booleanParam(defaultValue: true, description: 'This is to select terraform apply or destroy.', name: 'apply')
   }
   stages{
-        stage('Build Docker Image'){
-            steps{
-              echo "Trying ${params.apply}"
+        stage('Apply'){
+          
+          expression {
+                 return (params.apply)
+          }
+          steps{
+              echo "True"
+            }
+        }
+    stage('Destroy'){
+          
+          expression {
+                 return !(params.apply)
+          }
+          steps{
+              echo "False"
             }
         }
    }  
