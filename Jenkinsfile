@@ -7,9 +7,11 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 sh '''
+                oFN=sfdsd
+                nFN=sfdsd
                 oldSHC=afkjsdkj1232nkjsd
                 SHC=afkjsdkj1232nkjbd
-                if [ $SHC == $oldSHC ]
+                if [ $SHC == $oldSHC && $oFN == $nFN ]
                 then
                 echo "True"
                 else
