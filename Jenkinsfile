@@ -3,18 +3,27 @@ pipeline {
   environment{
      BRANCH = "${env.BRANCH_NAME}"
   }
-  parameters {
-    choice(name: 'terrafrom_mode',
-      choices: 'init\ndestroy',
-      description: 'It will decide terraform mode choice')
-  }
+  properties([
+     parameters([
+       booleanParam(
+         defaultValue: true,
+         description: 'apply should be false',
+         name: 'apply'
+       ),
+       booleanParam(
+         defaultValue: false,
+         description: 'destroy should be true',
+         name: 'destroy'
+       ),
+     ])
+   ])
   stages{
         stage('Build Docker Image'){
             steps{
-              if ( terrafrom_mode.equals("init") ){
+              if (params.apply) {
                 sh label: '', script: 'echo "True"'
               }
-              else{
+              if (params.init) {
               sh label: '', script: 'echo "False"'
               }
             }
