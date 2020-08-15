@@ -8,19 +8,21 @@ pipeline {
   }
   stages{
         stage('Apply'){
-          
+          when {
           expression {
                  return (params.apply)
           }
+       }
           steps{
               echo "True"
             }
         }
     stage('Destroy'){
-          
+      when {
           expression {
                  return !(params.apply)
           }
+      }
           steps{
               echo "False"
             }
