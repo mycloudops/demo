@@ -11,7 +11,7 @@ pipeline {
   stages{
         stage('Build Docker Image'){
             steps{
-              if ( ${params.terrafrom_mode} == init ){
+              if ( terrafrom_mode.equals("init") ){
                 sh label: '', script: 'echo "True"'
               }
               else{
