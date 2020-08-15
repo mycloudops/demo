@@ -11,19 +11,12 @@ pipeline {
   stages{
         stage('Build Docker Image'){
             steps{
-                sh '''
-                mode=$(echo "${params.terrafrom_mode}")
-                oFN=sfdsd
-                nFN=sfdsd
-                oldSHC=afkjsdkj1232nkjsd
-                SHC=afkjsdkj1232nkjbd
-                if [ $mode == init ]
-                then
-                echo "True"
-                else
-                echo "False"
-                fi  
-             '''   
+              if ( ${params.terrafrom_mode} == init ){
+                sh label: '', script: 'echo "True"'
+              }
+              else{
+              sh label: '', script: 'echo "False"'
+              }
             }
         }
    }  
