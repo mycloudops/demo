@@ -1,8 +1,5 @@
 pipeline {
   agent any
-    environment{
-        enableVersion = Version()
-    }
   stages{
         stage('Build Docker Image'){
             steps{
