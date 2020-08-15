@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment{
+     BRANCH = "${env.BRANCH_NAME}"
+  }
   stages{
         stage('Build Docker Image'){
             steps{
@@ -14,6 +17,9 @@ pipeline {
                 sed -i -e "s/$oldSHC/$SHC/g" hashcode
                 cat hashcode
                 echo "SCH replaced"
+                git add hashcode
+                git commit -m "Jenkins commit"
+                git push origin $BRANCH
                 fi  
              '''   
             }
