@@ -1,8 +1,7 @@
 pipeline {
   agent any
   parameters {[
-    booleanParam(defaultValue: true, description: 'This is to select terraform apply or destroy.', name: 'apply')
-    stringParam(defaultValue: '', name: 'BaseBranchName')
+    stringParam(defaultValue: '', name: 'BaseBranchName'),
     stringParam(defaultValue: '', name: 'CommitID')
   ]}
   stages{
