@@ -1,18 +1,10 @@
 pipeline {
   agent any
+  parameters ([
+    string(defaultValue: '', name: 'BaseBranchName'),
+    string(defaultValue: '', name: 'CommitID')
+  ])
   stages{
-        stage('Setup parameters') {
-            steps {
-                script { 
-                  properties([
-                  parameters ([
-                    string(defaultValue: '', name: 'BaseBranchName'),
-                    string(defaultValue: '', name: 'CommitID')
-                  ])
-                  ])
-                }
-            }
-        }
         stage('CherryPick'){
           steps{
               git checkout params.BaseBranchName
