@@ -20,6 +20,7 @@ pipeline {
                     ])
                 }
             }
+        }
         stage('CherryPick'){
             steps {
                 script{
