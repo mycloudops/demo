@@ -5,10 +5,10 @@ pipeline {
             steps {
                 script { 
                   properties([
-                  parameters {[
+                  parameters ([
                     string(defaultValue: '', name: 'BaseBranchName'),
                     string(defaultValue: '', name: 'CommitID')
-                  ]}
+                  ])
                   ])
                 }
             }
