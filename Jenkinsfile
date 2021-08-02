@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-    string(defaultValue: '', name: 'BaseBranchName'),
+    string(defaultValue: '', name: 'BaseBranchName')
     string(defaultValue: '', name: 'CommitID')
   }
   stages{
