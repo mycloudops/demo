@@ -30,7 +30,7 @@ pipeline {
                     git --version
                     git remote add origin git@github.com:mycloudops/demo.git
                     git checkout ${params.BaseBranchName}
-                    git push
+                    git push origin master
 //                     git cherry-pick ${params.CommitID}
 //                     git checkout develop
 //                     git merge ${params.BaseBranchName}
