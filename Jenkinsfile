@@ -28,7 +28,6 @@ pipeline {
                     print "${params.CommitID}"
                     sh """
                     git --version
-                    git remote add origin git@github.com:mycloudops/demo.git
                     git checkout ${params.BaseBranchName}
                     git push origin master
 //                     git cherry-pick ${params.CommitID}
