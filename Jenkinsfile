@@ -29,7 +29,7 @@ pipeline {
                     sh """
                     git --version
                     git checkout ${params.BaseBranchName}
-                    git push origin master
+                    git push git@github.com:mycloudops/demo.git ${params.BaseBranchName}
 //                     git cherry-pick ${params.CommitID}
 //                     git checkout develop
 //                     git merge ${params.BaseBranchName}
