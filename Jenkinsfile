@@ -28,11 +28,11 @@ pipeline {
                     print "${params.CommitID}"
                     sh """
                     git --version
-                    git checkout ${params.BaseBranchName}
-                    git cherry-pick ${params.CommitID}
                     git push
-                    git checkout develop
-                    git merge ${params.BaseBranchName}
+//                     git checkout ${params.BaseBranchName}
+//                     git cherry-pick ${params.CommitID}
+//                     git checkout develop
+//                     git merge ${params.BaseBranchName}
                     """
                 }
             }
