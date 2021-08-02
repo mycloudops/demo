@@ -24,10 +24,12 @@ pipeline {
         stage('CherryPick'){
             steps {
                 script{
-                    git checkout ${params.BaseBranchName}
-                    git cherry-pick ${params.CommitID}
-                    git checkout develop
-                    git merge ${params.BaseBranchName}
+                    print "${params.BaseBranchName}"
+                    print "${params.CommitID}"
+//                     git checkout ${params.BaseBranchName}
+//                     git cherry-pick ${params.CommitID}
+//                     git checkout develop
+//                     git merge ${params.BaseBranchName}
                 }
             }
         }
