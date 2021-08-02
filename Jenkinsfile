@@ -6,25 +6,30 @@ pipeline {
                 script { 
                     properties([
                         parameters([
-                            choice(
-                                choices: ['ONE', 'TWO'], 
-                                name: 'PARAMETER_01'
-                            ),
-                            booleanParam(
-                                defaultValue: true, 
-                                description: '', 
-                                name: 'BOOLEAN'
-                            ),
-                            text(
-                                defaultValue: '''
-                                this is a multi-line 
-                                string parameter example
-                                ''', 
-                                 name: 'MULTI-LINE-STRING'
+//                             choice(
+//                                 choices: ['ONE', 'TWO'], 
+//                                 name: 'PARAMETER_01'
+//                             ),
+//                             booleanParam(
+//                                 defaultValue: true, 
+//                                 description: '', 
+//                                 name: 'BOOLEAN'
+//                             ),
+//                             text(
+//                                 defaultValue: '''
+//                                 this is a multi-line 
+//                                 string parameter example
+//                                 ''', 
+//                                  name: 'MULTI-LINE-STRING'
+//                             ),
+                            string(
+                                defaultValue: '', 
+                                name: 'BaseBranchName', 
+                                trim: true
                             ),
                             string(
-                                defaultValue: 'scriptcrunch', 
-                                name: 'STRING-PARAMETER', 
+                                defaultValue: '', 
+                                name: 'CommitID', 
                                 trim: true
                             )
                         ])
