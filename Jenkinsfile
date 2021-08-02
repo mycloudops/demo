@@ -1,31 +1,18 @@
 pipeline {
   agent any
-  environment{
-     BRANCH = "${env.BRANCH_NAME}"
-  }
-  parameters {
+  parameters {[
     booleanParam(defaultValue: true, description: 'This is to select terraform apply or destroy.', name: 'apply')
-  }
+    string(defaultValue: '', name: 'BaseBranchName')
+    string(defaultValue: '', name: 'CommitID')
+  ]}
   stages{
-        stage('Apply'){
-          when {
-          expression {
-                 return (params.apply)
-          }
-       }
+        stage('CherryPick'){
           steps{
-              echo "True"
+              git checkout params.BaseBranchName
+              git cherry-pick params.CommitID
+              git checkout develop
+              git merge params.BaseBranchName
             }
         }
-    stage('Destroy'){
-      when {
-          expression {
-                 return !(params.apply)
-          }
-      }
-          steps{
-              echo "False"
-            }
-        }
-   }  
+    }  
 }
