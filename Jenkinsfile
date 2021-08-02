@@ -1,9 +1,9 @@
 pipeline {
   agent any
-  parameters ([
+  parameters {
     string(defaultValue: '', name: 'BaseBranchName'),
     string(defaultValue: '', name: 'CommitID')
-  ])
+  }
   stages{
         stage('CherryPick'){
           steps{
